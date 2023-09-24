@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GbTesting</string>
+    <string name="save">SAVE</string>
+    <string name="eMail">e-mail</string>
+    <string name="eMailIsValid">E-mail address is valid</string>
+    <string name="error">Error</string>
 </resources>
