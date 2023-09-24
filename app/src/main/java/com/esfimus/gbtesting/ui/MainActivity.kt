@@ -22,10 +22,13 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         with (ui) {
             saveButton.setOnClickListener {
-                if (emailValidator.isValid(inputText.text)) {
-                    getString(R.string.eMailIsValid).message()
+                val enteredText = inputText.text
+                if (emailValidator.isValid(enteredText)) {
+                    "${getString(R.string.eMailIsValid)} ${emailValidator.getEmailCharCount(enteredText)}"
+                        .message()
                 } else {
-                    getString(R.string.error).message()
+                    "${getString(R.string.error)} ${emailValidator.getEmailCharCount(enteredText)}"
+                        .message()
                 }
             }
         }
