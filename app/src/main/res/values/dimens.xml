@@ -3,4 +3,5 @@
     <dimen name="milliMargin">12dp</dimen>
     <dimen name="minHeight">48dp</dimen>
     <dimen name="decaMargin">24dp</dimen>
+    <dimen name="titleSize">24sp</dimen>
 </resources>
