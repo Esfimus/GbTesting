@@ -5,4 +5,5 @@
     <string name="eMailIsValid">E-mail address is valid</string>
     <string name="error">Error</string>
     <string name="title">TEST APP</string>
+    <string name="empty">Empty</string>
 </resources>
