@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         with (ui) {
             saveButton.setOnClickListener {
                 val enteredText = inputText.text
-                inputCopy.text = inputText.text
+                if (enteredText.isNullOrBlank()) {
+                    inputCopy.text = getString(R.string.empty)
+                } else {
+                    inputCopy.text = inputText.text
+                }
                 if (emailValidator.isValid(enteredText)) {
                     "${getString(R.string.eMailIsValid)} ${emailValidator.getEmailCharCount(enteredText)}"
                         .message()
