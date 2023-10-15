@@ -63,7 +63,7 @@ class EmailValidatorTest {
 
     @Test
     fun emailValidator_Correct_True() {
-        assertTrue(emailValidator.isValid("name@email.com"))
+        assertTrue(emailValidator.isValid(CORRECT_EMAIL))
         assertTrue(emailValidator.isValid("name@e-mail.com"))
         assertTrue(emailValidator.isValid("name@e-mail-mail-mail.com"))
         assertTrue(emailValidator.isValid("name@email.com.com"))
