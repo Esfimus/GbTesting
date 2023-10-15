@@ -78,7 +78,7 @@ class MainActivityEspressoTest {
 
     @Test
     fun activityTextView_HasText() {
-        val assertion = matches(withText("TEST APP"))
+        val assertion = matches(withText(APP_NAME))
         onView(withId(R.id.title)).check(assertion)
     }
 
@@ -100,23 +100,23 @@ class MainActivityEspressoTest {
     @Test
     fun activityButton_IsWorking() {
         onView(withId(R.id.saveButton)).perform(click())
-        onView(withId(R.id.inputCopy)).check(matches(withText("Empty")))
+        onView(withId(R.id.inputCopy)).check(matches(withText(EMPTY_MESSAGE)))
     }
 
     @Test
     fun activityTextViewFromInput_IsWorking() {
-        onView(withId(R.id.inputText)).perform(replaceText("test input"))
+        onView(withId(R.id.inputText)).perform(replaceText(TEST_INPUT))
         onView(withId(R.id.saveButton)).perform(click())
-        onView(withId(R.id.inputCopy)).check(matches(withText("test input")))
+        onView(withId(R.id.inputCopy)).check(matches(withText(TEST_INPUT)))
     }
 
     @Test
     fun activityTextViewFromAnotherInput_IsWorking() {
-        onView(withId(R.id.inputText)).perform(replaceText("test input"))
+        onView(withId(R.id.inputText)).perform(replaceText(TEST_INPUT))
         onView(withId(R.id.saveButton)).perform(click())
-        onView(withId(R.id.inputText)).perform(replaceText("another input"))
+        onView(withId(R.id.inputText)).perform(replaceText(ANOTHER_INPUT))
         onView(withId(R.id.saveButton)).perform(click())
-        onView(withId(R.id.inputCopy)).check(matches(withText("another input")))
+        onView(withId(R.id.inputCopy)).check(matches(withText(ANOTHER_INPUT)))
     }
 
     @After

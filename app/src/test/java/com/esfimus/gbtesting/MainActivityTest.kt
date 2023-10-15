@@ -70,7 +70,7 @@ class MainActivityTest {
     fun activityTextView_HasText() {
         scenario.onActivity {
             val titleTextView = it.findViewById<TextView>(R.id.title)
-            assertEquals("TEST APP", titleTextView.text)
+            assertEquals(APP_NAME, titleTextView.text)
         }
     }
 
@@ -78,9 +78,9 @@ class MainActivityTest {
     fun activityEditText_IsNotNull() {
         scenario.onActivity {
             val textInputField = it.findViewById<TextInputEditText>(R.id.inputText)
-            textInputField.setText("edit text")
+            textInputField.setText(INCORRECT_EMAIL)
             assertNotNull(textInputField.text)
-            assertEquals("edit text", textInputField.text.toString())
+            assertEquals(INCORRECT_EMAIL, textInputField.text.toString())
         }
     }
 
@@ -99,9 +99,9 @@ class MainActivityTest {
             val textInputField = it.findViewById<TextInputEditText>(R.id.inputText)
             val inputCopyTextView = it.findViewById<TextView>(R.id.inputCopy)
 
-            textInputField.setText("e-mail")
+            textInputField.setText(CORRECT_EMAIL)
             saveButton.performClick()
-            assertEquals("e-mail", inputCopyTextView.text.toString())
+            assertEquals(CORRECT_EMAIL, inputCopyTextView.text.toString())
         }
     }
 
@@ -111,9 +111,9 @@ class MainActivityTest {
             val saveButton = it.findViewById<Button>(R.id.saveButton)
             val textInputField = it.findViewById<TextInputEditText>(R.id.inputText)
 
-            textInputField.setText("funk")
+            textInputField.setText(INCORRECT_EMAIL)
             saveButton.performClick()
-            assertThat(ShadowToast.getTextOfLatestToast()).isEqualTo(("Error 4"))
+            assertThat(ShadowToast.getTextOfLatestToast()).isEqualTo((TOAST_MESSAGE))
         }
     }
 

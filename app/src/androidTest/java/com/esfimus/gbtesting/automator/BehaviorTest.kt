@@ -9,12 +9,13 @@ import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.Until
+import com.esfimus.gbtesting.EMPTY_MESSAGE
+import com.esfimus.gbtesting.TEST_INPUT
+import com.esfimus.gbtesting.TIMEOUT
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-
-const val TIMEOUT = 5000L
 
 @RunWith(AndroidJUnit4::class)
 @SdkSuppress(minSdkVersion = 18)
@@ -61,7 +62,7 @@ class BehaviorTest {
         val saveButton = uiDevice.findObject(By.res(packageName, "saveButton"))
         val inputCopy = uiDevice.findObject(By.res(packageName, "inputCopy"))
         saveButton.click()
-        Assert.assertEquals(inputCopy.text, "Empty")
+        Assert.assertEquals(inputCopy.text, EMPTY_MESSAGE)
     }
 
     @Test
@@ -69,8 +70,8 @@ class BehaviorTest {
         val saveButton = uiDevice.findObject(By.res(packageName, "saveButton"))
         val inputCopy = uiDevice.findObject(By.res(packageName, "inputCopy"))
         val inputText = uiDevice.findObject(By.res(packageName, "inputText"))
-        inputText.text = "Test text"
+        inputText.text = TEST_INPUT
         saveButton.click()
-        Assert.assertEquals(inputCopy.text, "Test text")
+        Assert.assertEquals(inputCopy.text, TEST_INPUT)
     }
 }
