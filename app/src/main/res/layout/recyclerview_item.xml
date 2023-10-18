@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:id="@+id/reportListCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/milliMargin"
+    android:layout_marginEnd="@dimen/milliMargin"
+    android:layout_marginTop="@dimen/microMargin"
+    android:layout_marginBottom="@dimen/microMargin"
+    android:minHeight="@dimen/minHeight"
+    app:cardCornerRadius="@dimen/milliMargin">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/milliMargin"/>
+
+</com.google.android.material.card.MaterialCardView>
