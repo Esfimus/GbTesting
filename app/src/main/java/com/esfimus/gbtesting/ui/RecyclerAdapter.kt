@@ -34,6 +34,11 @@ class RecyclerAdapter(itemsCount: Int) : RecyclerView.Adapter<RecyclerAdapter.Cu
         }
     }
 
+    fun addItem() {
+        itemsList.add(itemsList.size + 1)
+        notifyItemInserted(itemsList.size)
+    }
+
     fun setClickListener(clickListener: OnListItemClick) {
         itemClickListener = clickListener
     }

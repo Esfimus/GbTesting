@@ -8,4 +8,5 @@
     <string name="empty">Empty</string>
     <string name="numberOfListItems">Number of list items</string>
     <string name="showList">Show list</string>
+    <string name="addItem">Add item</string>
 </resources>

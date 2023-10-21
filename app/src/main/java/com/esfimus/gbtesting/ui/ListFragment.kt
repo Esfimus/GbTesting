@@ -17,7 +17,8 @@ class ListFragment : Fragment() {
 
     private var _ui: FragmentListBinding? = null
     private val ui get() = _ui!!
-    private var itemsCount: Int? = null
+    private var itemsCount: Int = 0
+    private lateinit var recyclerAdapter: RecyclerAdapter
 
     companion object {
         fun newInstance(itemsCount: Int) =
@@ -50,10 +51,10 @@ class ListFragment : Fragment() {
     }
 
     private fun initView() {
-        val title = "$itemsCount items selected"
+        val title = "$itemsCount items"
         ui.fragmentTitle.text = title
 
-        val recyclerAdapter = RecyclerAdapter(itemsCount!!)
+        recyclerAdapter = RecyclerAdapter(itemsCount)
         ui.recyclerLayout.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = recyclerAdapter
@@ -69,6 +70,15 @@ class ListFragment : Fragment() {
                 }
             }
         })
+
+        ui.addButton.setOnClickListener { addItem() }
+    }
+
+    private fun addItem() {
+        itemsCount++
+        recyclerAdapter.addItem()
+        val updatedTitle = "$itemsCount items"
+        ui.fragmentTitle.text = updatedTitle
     }
 
     private fun View.hideKeyboard() {
