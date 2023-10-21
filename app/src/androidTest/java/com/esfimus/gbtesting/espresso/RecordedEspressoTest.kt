@@ -1,4 +1,4 @@
-package com.esfimus.gbtesting.ui
+package com.esfimus.gbtesting.espresso
 
 
 import android.view.View
@@ -11,6 +11,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.esfimus.gbtesting.R
+import com.esfimus.gbtesting.ui.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf

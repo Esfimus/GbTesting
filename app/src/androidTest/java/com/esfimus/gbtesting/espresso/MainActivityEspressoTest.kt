@@ -1,4 +1,4 @@
-package com.esfimus.gbtesting
+package com.esfimus.gbtesting.espresso
 
 import android.widget.TextView
 import androidx.lifecycle.Lifecycle
@@ -14,6 +14,11 @@ import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.esfimus.gbtesting.ANOTHER_INPUT
+import com.esfimus.gbtesting.APP_NAME
+import com.esfimus.gbtesting.EMPTY_MESSAGE
+import com.esfimus.gbtesting.R
+import com.esfimus.gbtesting.TEST_INPUT
 import com.esfimus.gbtesting.ui.MainActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout

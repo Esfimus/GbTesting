@@ -5,3 +5,4 @@ internal const val TIMEOUT = 5000L
 internal const val EMPTY_MESSAGE = "Empty"
 internal const val TEST_INPUT = "test input"
 internal const val ANOTHER_INPUT = "another input"
+internal const val ITEMS_COUNT = 20

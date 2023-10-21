@@ -3,6 +3,7 @@ package com.esfimus.gbtesting.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.esfimus.gbtesting.R
 import com.esfimus.gbtesting.databinding.ActivityMainBinding
 import com.esfimus.gbtesting.domain.EmailValidator
@@ -36,7 +37,24 @@ class MainActivity : AppCompatActivity() {
                         .message()
                 }
             }
+
+            listFragmentButton.setOnClickListener {
+                val itemsCount = try {
+                    listItemsInputText.text.toString().toInt()
+                } catch (e: Exception) {
+                    0
+                }
+                openFragment(ListFragment.newInstance(itemsCount))
+            }
         }
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        this.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.mainLayout, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun String.message() {
