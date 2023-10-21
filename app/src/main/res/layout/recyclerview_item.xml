@@ -13,10 +13,24 @@
     android:minHeight="@dimen/minHeight"
     app:cardCornerRadius="@dimen/milliMargin">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/cardNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/milliMargin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip"
+            style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/milliMargin"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
